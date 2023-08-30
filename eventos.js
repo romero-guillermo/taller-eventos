@@ -1,7 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const miDiv = document.getElementById("container");
+  const miBoton = document.getElementById('miBoton');
+const miDiv = document.getElementById('miDiv');
 
-  miDiv.addEventListener("click", function() {
-    alert("Hola! Soy el div");
-  });
+function handleClickButton(event) {
+  alert('¡Hiciste clic en el botón!');
+  event.stopPropagation(); // Detiene la propagación del evento
+}
+
+function handleClickDiv() {
+  alert('¡Hiciste clic en el div!');
+}
+
+miBoton.addEventListener('click', handleClickButton);
+miDiv.addEventListener('click', handleClickDiv);
 });
